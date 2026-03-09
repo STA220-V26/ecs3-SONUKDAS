@@ -10,11 +10,11 @@ quiet = FALSE
 )
 }
  library(tidyverse)
-+ library(data.table)
-+ patients <-
-+ readr::read_csv(unz("data.zip", "data-fixed/patients.csv")) |>
-+ setDT() |>
-+ setkey(id)
+library(data.table)
+patients <-
+readr::read_csv(unz("data.zip", "data-fixed/patients.csv")) |>
+setDT() |>
+setkey(id)
 # read_csv() with unz() to read without unzipping and setDt for data.table format
 patients <- janitor::remove_empty(patients, quiet = FALSE)
 patients <- janitor::remove_constant(patients, quiet = FALSE)
